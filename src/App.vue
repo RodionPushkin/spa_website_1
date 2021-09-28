@@ -1,21 +1,34 @@
 <template>
-  <!-- <router-link to="/">page</router-link> -->
-  <main class="main">
-    <router-view/>
-  </main>
+  <div class="content mf m">
+    <!-- <router-link to="/">page</router-link> -->
+    <c_menu></c_menu>
+    <c_mouse></c_mouse>
+    <main class="main">
+      <router-view/>
+    </main>
+  </div>
 </template>
-
+<script>
+import c_menu from '@/components/c_menu.vue'
+import c_mouse from '@/components/c_mouse.vue'
+export default {
+  components:{
+    c_menu,
+    c_mouse
+  }
+}
+</script>
 <style lang="scss">
 :root {
-  --main-color: #000000;
-  --hover-color: #000000;
-  --error-color: #000000;
-  --good-color: #000000;
+  --main-color: #0066ff;
+  --hover-color: #eeff00;
+  --error-color: #e05050;
+  --good-color: #4add3c;
   --bg-color: #f9f9f9;
   --black-color: #000000;
   --white-color: #ffffff;
 }
-*{padding: 0;margin: 0;border: 0; scroll-behavior: smooth; user-select: none;}
+*{padding: 0;margin: 0;border: 0; scroll-behavior: smooth; user-select: none;transition: 0.05s;}
 *,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
 :focus,:active{outline: none;}
 a:focus,a:active{outline: none;}
@@ -127,7 +140,7 @@ body{
 }
 .main{
   flex: 1 0 auto;
-  min-height: calc(100vh - 167px);
+  min-height: calc(100vh - 0px);
 }
 .content{
   display: flex;
@@ -135,15 +148,33 @@ body{
   width: 100vw;
   position: relative;
   background: var(--bg-color);
-  font-size: 16px;
-  line-height: 20px;
-  font-family: 'Roboto', sans-serif;
   overflow: hidden;
 }
 .page{
   width: 100%;
-  height: 100%;
-  display: block;
+  min-height: calc(100vh - 0px);
+}
+@media (min-width: 1400px) {
+  .s{
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .m{
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .l{
+    font-size: 22px;
+    line-height: 26px;
+  }
+  .xl{
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .main{
+    min-height: 100vh;
+    padding: 0px 144px;
+  }
 }
 @media (min-width: 700px) and (max-width: 1400px) {
   .s{
@@ -159,11 +190,12 @@ body{
     line-height: 24px;
   }
   .xl{
-    font-size: 22px;
-    line-height: 26px;
+    font-size: 24px;
+    line-height: 28px;
   }
   .main{
-    min-height: calc(100vh - 118px);
+    min-height: 100vh;
+    padding: 0px 72px;
   }
 }
 @media (max-width: 700px) {
@@ -185,6 +217,7 @@ body{
   }
   .main{
     min-height: 100vh;
+    padding: 0px 24px;
   }
 }
 </style>
