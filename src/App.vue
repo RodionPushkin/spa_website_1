@@ -3,18 +3,20 @@
     <!-- <router-link to="/">page</router-link> -->
     <c_menu></c_menu>
     <c_mouse></c_mouse>
-    <main class="main">
-      <router-view/>
+    <main class="main white">
+      <c_pages></c_pages>
     </main>
   </div>
 </template>
 <script>
 import c_menu from '@/components/c_menu.vue'
 import c_mouse from '@/components/c_mouse.vue'
+import c_pages from '@/components/c_pages.vue'
 export default {
   components:{
     c_menu,
-    c_mouse
+    c_mouse,
+    c_pages
   }
 }
 </script>
@@ -53,6 +55,11 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 body{
   overflow-x: hidden;
   overflow-y: overlay;
+  background: rgba(17, 17, 17, 0);
+  transition: 0.2s;
+  &.active{
+    background: rgba(17, 17, 17, 1);
+  }
 }
 .input{
   padding: 12px 24px;
@@ -140,19 +147,22 @@ body{
 }
 .main{
   flex: 1 0 auto;
-  min-height: calc(100vh - 0px);
+  min-height: 100vh;
+  position: relative;
+  &.active{
+    padding-right: 350px; /////////////////////////////////////////////////////////////////////////////////////////////ertshasdtvfghjsdvfghjsdf
+  }
 }
 .content{
   display: flex;
   flex-direction: column;
   width: 100vw;
   position: relative;
-  background: var(--bg-color);
   overflow: hidden;
 }
 .page{
   width: 100%;
-  min-height: calc(100vh - 0px);
+  min-height: 100vh;
 }
 @media (min-width: 1400px) {
   .s{
@@ -171,7 +181,7 @@ body{
     font-size: 26px;
     line-height: 30px;
   }
-  .main{
+  .section{
     min-height: 100vh;
     padding: 0px 144px;
   }
@@ -193,7 +203,7 @@ body{
     font-size: 24px;
     line-height: 28px;
   }
-  .main{
+  .section{
     min-height: 100vh;
     padding: 0px 72px;
   }
@@ -215,7 +225,7 @@ body{
     font-size: 20px;
     line-height: 24px;
   }
-  .main{
+  .section{
     min-height: 100vh;
     padding: 0px 24px;
   }

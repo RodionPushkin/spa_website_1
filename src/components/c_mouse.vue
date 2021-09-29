@@ -39,6 +39,17 @@ export default {
           cursorEl.classList.remove('event-button')
           cursorAuraEl.classList.remove('event-button')
         }
+        if(e.toElement.classList.contains('white')){
+          cursorEl.classList.add('event-white')
+          cursorAuraEl.classList.add('event-white')
+          cursorEl.classList.add('event-white')
+          cursorAuraEl.classList.add('event-white')
+        }else{
+          cursorEl.classList.remove('event-white')
+          cursorAuraEl.classList.remove('event-white')
+          cursorEl.classList.remove('event-white')
+          cursorAuraEl.classList.remove('event-white')
+        }
       })
       window.addEventListener('scroll', ()=> {
         mouseCoords(event)
@@ -80,7 +91,7 @@ export default {
   transform-origin: center center;
   background : rgba(0, 0, 0, 1);
   border-radius: 36px;
-  transition: width 0.2s cubic-bezier(0,-0.94,1,1.94), height 0.2s cubic-bezier(0,-0.94,1,1.94), opacity 0.2s, transform 0.2s cubic-bezier(0,-0.94,1,1.94);
+  transition: width 0.2s cubic-bezier(0,-0.94,1,1.94), height 0.2s cubic-bezier(0,-0.94,1,1.94), opacity 0.2s, transform 0.2s cubic-bezier(0,-0.94,1,1.94), background 0.2s;
   z-index: 99999;
   user-select: none;
   pointer-events: none;
@@ -90,6 +101,10 @@ export default {
   &.event-button{
     transform: translate(-50%, -50%) scale(0);
   }
+  &.event-white{
+    background : rgba(255, 255, 255, 1);
+  }
+  
 }
 .cursor-aura{
   position: fixed;
@@ -100,7 +115,7 @@ export default {
   transform-origin: center center;
   border: 1px solid rgba(0, 0, 0, 1);
   border-radius: 36px;
-  transition: width 0.2s cubic-bezier(0,-0.94,1,1.94), height 0.2s cubic-bezier(0,-0.94,1,1.94), opacity 0.2s, transform 0.2s cubic-bezier(0,-0.94,1,1.94);
+  transition: width 0.2s cubic-bezier(0,-0.94,1,1.94), height 0.2s cubic-bezier(0,-0.94,1,1.94), opacity 0.2s, transform 0.2s cubic-bezier(0,-0.94,1,1.94), border 0.2s;
   z-index: 99999;
   user-select: none;
   pointer-events: none;
@@ -109,6 +124,9 @@ export default {
   }
   &.event-button{
     transform: translate(-50%, -50%) scale(1.3);
+  }
+  &.event-white{
+    border: 1px solid rgba(255, 255, 255, 1); 
   }
 }
 .disabled{

@@ -6,6 +6,18 @@
       </div>
     </div>
     <nav class="nav">
+      <div class="nav-item mf hover">
+        главная
+      </div>
+      <div class="nav-item mf hover">
+        проекты
+      </div>
+      <div class="nav-item mf hover">
+        о нас
+      </div>
+      <div class="nav-item mf hover">
+        контакты
+      </div>
     </nav>
   </div>
 </template>
@@ -18,8 +30,18 @@ export default {
       let menu = document.querySelector('.menu')
       if(menu.querySelector('.menu-button').classList.contains('active')){
         menu.querySelector('.menu-button').classList.remove('active')
+        menu.querySelector('.nav').classList.remove('active')
+        document.querySelector('body').classList.remove('active')
+        this.$store.dispatch('SET_MENU_OPENED',{
+          payload: false
+        })
       }else{
         menu.querySelector('.menu-button').classList.add('active')
+        menu.querySelector('.nav').classList.add('active')
+        document.querySelector('body').classList.add('active')
+        this.$store.dispatch('SET_MENU_OPENED',{
+          payload: true
+        })
       }
     }
   }
@@ -31,6 +53,7 @@ export default {
   right: 0;
   top: 0;
   z-index: 99999;
+  pointer-events: none;
 }
 .menu-button{
   position: absolute;
@@ -40,6 +63,8 @@ export default {
   display: grid;
   place-items: center;
   transition: 0.3s;
+  pointer-events: all;
+  z-index: 9999;
   .button-wrap{
     height: 32px;
     width: 32px;
@@ -79,6 +104,31 @@ export default {
     top: 13px;
     transition: 0.2s cubic-bezier(.37,-0.64,.61,1.6);
     content: "";
+  }
+}
+.nav{
+  height: 100vh;
+  min-width: 400px;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 200px 36px;
+  padding-right: 86px;
+  font-size: 36px;
+  position: absolute;
+  right: -400px;
+  transition: 0.2s cubic-bezier(.37,-0.64,.61,1.6);
+  .nav-item{
+    pointer-events: all;
+    transition: 0.3s;
+    &:hover{
+      color: var(--main-color);
+    }
+  }
+  &.active{
+    right: -50px;
   }
 }
 @media (min-width: 1400px) {
