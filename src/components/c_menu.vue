@@ -46,7 +46,7 @@ export default {
     pointer-events: none;
     position: relative;
     transition: 0.2s cubic-bezier(.37,-0.64,.61,1.6);
-    // transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
   }
   .button-item{
     height: 6px;
@@ -54,9 +54,8 @@ export default {
     background: var(--black-color);
     border-radius: 2px;
     position: absolute;
-    transform: translate(-50%, -50%);
-    left: 16px;
-    top: 16px;
+    left: 4px;
+    top: 13px;
     transition: 0.2s cubic-bezier(.37,-0.64,.61,1.6);
   }
   .button-item:before{
@@ -65,9 +64,8 @@ export default {
     background: var(--black-color);
     border-radius: 2px;
     position: absolute;
-    transform: translate(-50%, -50%);
-    left: 12px;
-    top: -10px;
+    left: -4px;
+    top: -13px;
     transition: 0.2s cubic-bezier(.37,-0.64,.61,1.6);
     content: "";
   }
@@ -77,60 +75,117 @@ export default {
     background: var(--black-color);
     border-radius: 2px;
     position: absolute;
-    transform: translate(-50%, -50%);
-    left: 12px;
-    top: 16px;
+    left: -4px;
+    top: 13px;
     transition: 0.2s cubic-bezier(.37,-0.64,.61,1.6);
     content: "";
-  }
-  &.active{
-    background: var(--hover-color);
-    .button-item{
-      width: 0px;
-      background: var(--black-color);
-      border-radius: 2px;
-      position: absolute;
-      transform: translate(-50%, -50%);
-      transform-origin: center;
-      left: 16px;
-      top: 16px;
-    }
-    .button-item:before{
-      transform: rotateZ(-45deg) translate(-50%, -50%);
-      width: 32px;
-      left: -2px;
-      top: -8px;
-    }
-    .button-item:after{
-      width: 32px;
-      left: -6px;
-      top: 14.5px;
-      transform: rotateZ(45deg) translate(-50%, -50%);
-    }
-  }
-  &:hover{
-    background: var(--hover-color);
-    .button-wrap{
-      transform: rotateZ(0deg);
-    }
   }
 }
 @media (min-width: 1400px) {
   .menu-button{
-    top: 144px;
+    top: 72px;
     right: 144px;
+    &.active{
+      background: var(--hover-color);
+      .button-item{
+        width: 0px;
+        background: var(--black-color);
+        border-radius: 2px;
+        position: absolute;
+        transform-origin: center;
+        left: 16px;
+        top: 16px;
+      }
+      .button-item:before{
+        transform: rotateZ(-45deg);
+        width: 32px;
+        left: -16px;
+        top: -3px;
+      }
+      .button-item:after{
+        width: 32px;
+        left: -16px;
+        top: -3px;
+        transform: rotateZ(45deg);
+      }
+    }
+    &:hover{
+      background: var(--hover-color);
+      .button-wrap{
+        transform: rotateZ(0deg);
+      }
+    }
   }
 }
 @media (min-width: 700px) and (max-width: 1400px) {
   .menu-button{
     top: 72px;
     right: 72px;
+    &.active{
+      background: var(--hover-color);
+      .button-item{
+        width: 0px;
+        background: var(--black-color);
+        border-radius: 2px;
+        position: absolute;
+        transform-origin: center;
+        left: 16px;
+        top: 16px;
+      }
+      .button-item:before{
+        transform: rotateZ(-45deg);
+        width: 32px;
+        left: -16px;
+        top: -3px;
+      }
+      .button-item:after{
+        width: 32px;
+        left: -16px;
+        top: -3px;
+        transform: rotateZ(45deg);
+      }
+    }
+    &:hover{
+      background: var(--hover-color);
+      .button-wrap{
+        transform: rotateZ(0deg);
+      }
+    }
   }
 }
 @media (max-width: 700px) {
+  .menu{
+    height: 100vh;
+    width: 100vw;
+  }
   .menu-button{
-    top: 24px;
-    right: 24px;
+    bottom: 144px;
+    left: 50%;
+    transform: translateX(-50%);
+    &.active{
+      background: var(--hover-color);
+      .button-item{
+        width: 0px;
+        background: var(--black-color);
+        border-radius: 2px;
+        position: absolute;
+        transform-origin: center;
+        left: 16px;
+        top: 16px;
+      }
+      .button-item:before{
+        transform: rotateZ(-45deg);
+        width: 32px;
+        left: -16px;
+        top: -3px;
+      }
+      .button-item:after{
+        width: 32px;
+        left: -16px;
+        top: -3px;
+        transform: rotateZ(45deg);
+      }
+    }
   }
 }
 </style>

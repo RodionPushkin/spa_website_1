@@ -8,7 +8,9 @@
 import gsap from 'gsap'
 export default {
   mounted() {
-    this.cursorMovement()
+    if(window.innerHeight < window.innerWidth){
+      this.cursorMovement()
+    }
   },
   methods: {
     cursorMovement: function(){
