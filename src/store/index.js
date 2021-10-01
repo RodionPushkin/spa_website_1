@@ -20,12 +20,15 @@ export default createStore({
       state.pages.isMenuOpened = payload
     },
     setSelectedPage(state, payload){
-      state.pages.isMenuOpened = payload
+      state.pages.selectedPage = payload
     },
   },
   actions: {
     SET_MENU_OPENED(context, payload){
       context.commit('setMenuOpened', payload);
+    },
+    SET_SELECTED_PAGE(context, payload){
+      context.commit('setSelectedPage', payload);
     }
   },
 })

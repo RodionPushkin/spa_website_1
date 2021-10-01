@@ -54,7 +54,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 }
 body{
   overflow-x: hidden;
-  overflow-y: overlay;
+  overflow-y: hidden;
   background: rgba(17, 17, 17, 0);
   transition: 0.2s;
   &.active{
@@ -182,6 +182,9 @@ body{
     line-height: 30px;
   }
   .section{
+    height: 100vh;
+  }
+  .page{
     min-height: 100vh;
     padding: 0px 144px;
   }
@@ -204,6 +207,9 @@ body{
     line-height: 28px;
   }
   .section{
+    height: 100vh;
+  }
+  .page{
     min-height: 100vh;
     padding: 0px 72px;
   }
@@ -226,6 +232,9 @@ body{
     line-height: 24px;
   }
   .section{
+    height: 100vh;
+  }
+  .page{
     min-height: 100vh;
     padding: 0px 24px;
   }

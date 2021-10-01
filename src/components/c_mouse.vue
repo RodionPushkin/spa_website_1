@@ -104,6 +104,9 @@ export default {
   &.event-white{
     background : rgba(255, 255, 255, 1);
   }
+  @media (max-width: 700px){
+    display: none;
+  }
   
 }
 .cursor-aura{
@@ -127,6 +130,9 @@ export default {
   }
   &.event-white{
     border: 1px solid rgba(255, 255, 255, 1); 
+  }
+  @media (max-width: 700px){
+    display: none;
   }
 }
 .disabled{

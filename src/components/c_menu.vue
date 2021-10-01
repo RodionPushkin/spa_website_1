@@ -6,16 +6,16 @@
       </div>
     </div>
     <nav class="nav">
-      <div class="nav-item mf hover">
+      <div class="nav-item mf hover" @click="this.$store.dispatch('SET_SELECTED_PAGE',{payload: 0})">
         главная
       </div>
-      <div class="nav-item mf hover">
+      <div class="nav-item mf hover" @click="this.$store.dispatch('SET_SELECTED_PAGE',{payload: 1})">
         проекты
       </div>
-      <div class="nav-item mf hover">
+      <div class="nav-item mf hover" @click="this.$store.dispatch('SET_SELECTED_PAGE',{payload: 2})">
         о нас
       </div>
-      <div class="nav-item mf hover">
+      <div class="nav-item mf hover" @click="this.$store.dispatch('SET_SELECTED_PAGE',{payload: 3})">
         контакты
       </div>
     </nav>
@@ -76,7 +76,7 @@ export default {
   .button-item{
     height: 6px;
     width: 24px;
-    background: var(--black-color);
+    background: var(--white-color);
     border-radius: 2px;
     position: absolute;
     left: 4px;
@@ -86,7 +86,7 @@ export default {
   .button-item:before{
     height: 6px;
     width: 32px;
-    background: var(--black-color);
+    background: var(--white-color);
     border-radius: 2px;
     position: absolute;
     left: -4px;
@@ -97,7 +97,7 @@ export default {
   .button-item:after{
     height: 6px;
     width: 32px;
-    background: var(--black-color);
+    background: var(--white-color);
     border-radius: 2px;
     position: absolute;
     left: -4px;
@@ -108,7 +108,7 @@ export default {
 }
 .nav{
   height: 100vh;
-  min-width: 400px;
+  width: 400px;
   background: var(--bg-color);
   display: flex;
   flex-direction: column;
@@ -120,15 +120,28 @@ export default {
   position: absolute;
   right: -400px;
   transition: 0.2s cubic-bezier(.37,-0.64,.61,1.6);
+  pointer-events: all;
   .nav-item{
-    pointer-events: all;
     transition: 0.3s;
     &:hover{
       color: var(--main-color);
+      @media (max-width: 700px){
+        color: var(--black-color);
+      }
     }
   }
   &.active{
     right: -50px;
+  }
+  @media (max-width: 700px){
+    background: rgba(255, 255, 255, 0.7);
+    width: 120vw;
+    right: -120vw;
+    padding: 200px 36px;
+    padding-right: calc(36px + 20vw);
+    &.active{
+      right: -20vw;
+    }
   }
 }
 @media (min-width: 1400px) {
@@ -148,6 +161,7 @@ export default {
       }
       .button-item:before{
         transform: rotateZ(-45deg);
+        background: var(--black-color);
         width: 32px;
         left: -16px;
         top: -3px;
@@ -157,12 +171,22 @@ export default {
         left: -16px;
         top: -3px;
         transform: rotateZ(45deg);
+        background: var(--black-color);
       }
     }
     &:hover{
       background: var(--hover-color);
       .button-wrap{
         transform: rotateZ(0deg);
+      }
+      .button-item{
+        background: var(--black-color);
+      }
+      .button-item:before{
+        background: var(--black-color);
+      }
+      .button-item:after{
+        background: var(--black-color);
       }
     }
   }
@@ -184,6 +208,7 @@ export default {
       }
       .button-item:before{
         transform: rotateZ(-45deg);
+        background: var(--black-color);
         width: 32px;
         left: -16px;
         top: -3px;
@@ -193,12 +218,22 @@ export default {
         left: -16px;
         top: -3px;
         transform: rotateZ(45deg);
+        background: var(--black-color);
       }
     }
     &:hover{
       background: var(--hover-color);
       .button-wrap{
         transform: rotateZ(0deg);
+      }
+      .button-item{
+        background: var(--black-color);
+      }
+      .button-item:before{
+        background: var(--black-color);
+      }
+      .button-item:after{
+        background: var(--black-color);
       }
     }
   }
@@ -209,7 +244,7 @@ export default {
     width: 100vw;
   }
   .menu-button{
-    bottom: 144px;
+    bottom: 104px;
     left: 50%;
     transform: translateX(-50%);
     &.active{
@@ -225,6 +260,7 @@ export default {
       }
       .button-item:before{
         transform: rotateZ(-45deg);
+        background: var(--black-color);
         width: 32px;
         left: -16px;
         top: -3px;
@@ -234,6 +270,7 @@ export default {
         left: -16px;
         top: -3px;
         transform: rotateZ(45deg);
+        background: var(--black-color);
       }
     }
   }
