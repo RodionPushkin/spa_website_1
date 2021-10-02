@@ -6,16 +6,16 @@
       </div>
     </div>
     <nav class="nav">
-      <div class="nav-item mf hover" @click="this.$store.dispatch('SET_SELECTED_PAGE',{payload: 0})">
+      <div class="nav-item mf hover" @click="this.$store.dispatch('SET_SELECTED_PAGE',{payload: 0});toggleMenu()">
         главная
       </div>
-      <div class="nav-item mf hover" @click="this.$store.dispatch('SET_SELECTED_PAGE',{payload: 1})">
+      <div class="nav-item mf hover" @click="this.$store.dispatch('SET_SELECTED_PAGE',{payload: 1});toggleMenu()">
         проекты
       </div>
-      <div class="nav-item mf hover" @click="this.$store.dispatch('SET_SELECTED_PAGE',{payload: 2})">
+      <div class="nav-item mf hover" @click="this.$store.dispatch('SET_SELECTED_PAGE',{payload: 2});toggleMenu()">
         о нас
       </div>
-      <div class="nav-item mf hover" @click="this.$store.dispatch('SET_SELECTED_PAGE',{payload: 3})">
+      <div class="nav-item mf hover" @click="this.$store.dispatch('SET_SELECTED_PAGE',{payload: 3});toggleMenu()">
         контакты
       </div>
     </nav>

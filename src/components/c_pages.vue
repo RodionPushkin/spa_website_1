@@ -250,23 +250,31 @@ export default {
   }
 }
 .section:nth-child(1) .page-bg{
-  background: url('https://w-dog.ru/wallpapers/10/17/432030742341343/okean-zakat-volna-voda-priroda.jpg');
+  background: url('/img/9f664359381ff7e3d34f99bb86d7a3e0.jpg');
+  // background: url('https://cdn.pixabay.com/photo/2016/11/29/09/16/architecture-1868667_960_720.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .section:nth-child(2) .page-bg{
-  background: url('https://tsdbklimovo.ru/wp-content/uploads/2020/06/ookean2.jpg');
+  background: url('/img/okean-zakat-volna-voda-priroda.jpg');
+  // background: url('https://cdn.pixabay.com/photo/2014/05/02/23/46/bridge-336475_960_720.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .section:nth-child(3) .page-bg{
-  background: url('https://images.pexels.com/photos/57946/pexels-photo-57946.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=627&amp;w=1200');
+  background: url('/img/pexels-photo-57946.jpg');
+  // background: url('https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014618_960_720.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .section:nth-child(4) .page-bg{
-  background: url('https://rusinfo.info/wp-content/uploads/9/f/6/9f664359381ff7e3d34f99bb86d7a3e0.jpg');
+  background: url('/img/ookean2.jpg');
+  // background: url('https://cdn.pixabay.com/photo/2017/01/18/16/46/hong-kong-1990268_960_720.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 </style>
